@@ -25,15 +25,10 @@
     <![endif]-->
 </head>
 <body>
-    <!-- 
-        TODO: 헤더 레이아웃 잡기 
-    -->
-
-    <!-- header -->
     <header id="header">
         <div class="container">
             <div class="row">
-                <div class="header">
+                <div class="header clearfix">
                     <h1>
                         <a href="#">
                             <em><img src="assets/img/logo.png" alt=""></em>
@@ -41,18 +36,19 @@
                         </a>
                     </h1>
                     <nav class="nav">
-                        <ul>
-                            <li>오늘의 음악</li>
-                            <li>랭킹</li>
-                            <li>INDJ</li>
-                            <li>자유게시판</li>
-                            <li>건의게시판</li>
+                        <ul class="clearfix">
+                            <li><a href="http://" target="_blank" rel="noopener noreferrer">소개</a></li>
+                            <li><a href="http://" target="_blank" rel="noopener noreferrer">음악</a></li>
+                            <li><a href="http://" target="_blank" rel="noopener noreferrer">콘서트</a></li>
+                            <li><a href="http://" target="_blank" rel="noopener noreferrer">게시판</a></li>
+                            <li><a href="http://" target="_blank" rel="noopener noreferrer">DJ 광장</a></li>
                         </ul>
                     </nav>
                 </div>
             </div>
         </div>
     </header>
+    <!-- //header -->
 
     <!-- Javascripts -->
     <script src="assets/js/jquery.min_1.12.4.js"></script>
