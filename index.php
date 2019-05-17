@@ -13,18 +13,44 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <!-- 웹폰트 가져오기 -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900" rel="stylesheet">
+
     <!-- HTLM5shiv ie6~8 -->
     <!--[if lt IE 9]> 
         <script src="assets/js/html5shiv.min.js"></script>
         <script type="text/javascript">
-            alert("현재 브라우저는 지원하지 않습니다. 크롬 브라우저를 추천합니다.!");
+            alert("현재 브라우저는 지원하지 않습니다. 크롬 브라우저를 추천합니다.");
         </script>
     <![endif]-->
 </head>
 <body>
-    <!-- TODO: 헤더 레이아웃 잡기 -->
+    <!-- 
+        TODO: 헤더 레이아웃 잡기 
+    -->
+
+    <!-- header -->
     <header id="header">
         <div class="container">
+            <div class="row">
+                <div class="header">
+                    <h1>
+                        <a href="#">
+                            <em><img src="assets/img/logo.png" alt=""></em>
+                            <strong><img src="assets/img/logo-sub.png" alt=""></strong>
+                        </a>
+                    </h1>
+                    <nav class="nav">
+                        <ul>
+                            <li>오늘의 음악</li>
+                            <li>랭킹</li>
+                            <li>INDJ</li>
+                            <li>자유게시판</li>
+                            <li>건의게시판</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
         </div>
     </header>
 
