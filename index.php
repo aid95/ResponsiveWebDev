@@ -50,6 +50,36 @@
     </header>
     <!-- //header -->
 
+    <section id="banner">
+        <h2 class="ir_so">트렌드 음악 소식</h2>
+        <div class="banner_menu">
+            <div class="container">
+                <div class="row">
+                    <div class="bm_left">
+                        <ul>
+                            <li><a href="#" target="_blank" rel="noopener noreferrer"></a></li>
+                            <li><a href="#" target="_blank" rel="noopener noreferrer"></a></li>
+                            <li><a href="#" target="_blank" rel="noopener noreferrer"></a></li>
+                        </ul>
+                    </div>
+                    <div class="bm_right">
+                        <ul>
+                            <li><a href="#" target="_blank" rel="noopener noreferrer"></a></li>
+                            <li><a href="#" target="_blank" rel="noopener noreferrer"></a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#" target="_blank" rel="noopener noreferrer"></a></li>
+                            <li><a href="#" target="_blank" rel="noopener noreferrer"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider">
+            <img src="assets/img/main_slider01.jpg" alt="메인 이미지1">
+        </div>
+    </section>
+
     <!-- Javascripts -->
     <script src="assets/js/jquery.min_1.12.4.js"></script>
 </body>
