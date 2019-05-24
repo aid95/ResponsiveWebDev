@@ -19,8 +19,11 @@
 .banner_menu a {color: #fff; font-size: 16px; transition: all 0.3s;}
 .banner_menu a:hover {color: #c1c1c1;}
 .banner_menu .bm_left {float: left;}
+.banner_menu li.line:after {content: ''; width: 1px; height: 14px; background: #fff; position: absolute; right: -18px; top: 2px;}
 .banner_menu .bm_left ul {}
-.banner_menu .bm_left li {display: inline;}
+.banner_menu .bm_left li {display: inline; position: relative; margin-right: 30px;}
 .banner_menu .bm_right {float: right;}
 .banner_menu .bm_right ul {}
-.banner_menu .bm_right li {display: inline;}
+.banner_menu .bm_right li {display: inline; position: relative; margin-right: 30px;}
+.banner_menu .bm_right li.blue {margin-right: 10px;}
+.banner_menu .bm_right li.blue a {background: #2774A4; padding: 7px 30px 9px 30px; color: #fff; width: 60px; display: inline-block; border: 1px solid #5486C2;}
