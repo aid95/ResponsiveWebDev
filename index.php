@@ -42,9 +42,7 @@
                 </div>
             </div>
         </div>
-        <div class="slider">
-            <img src="assets/img/banner.jpg" alt="메인 이미지1">
-        </div>
+        <div class="slider"><img src="assets/img/banner.jpg" alt="메인 이미지1"></div>
     </section>
     <!-- //banner -->
 
