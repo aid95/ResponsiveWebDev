@@ -15,6 +15,10 @@
 
     <!-- 웹폰트 가져오기 -->
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900" rel="stylesheet">
+    <!-- JQUERY CDN -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <!-- 메인화면 이미지 슬라이딩을 위한 swiper js 라이브러리 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css">
 
     <!-- HTLM5shiv ie6~8 -->
     <!--[if lt IE 9]> 
@@ -43,7 +47,21 @@
             </div>
         </div>
         <div class="slider">
-            <img src="assets/img/banner.jpg" alt="메인 이미지1">
+            <!-- Slider main container -->
+            <div class="swiper-container">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide"><img src="assets/img/banner.jpg" alt="배너1"></div>
+                    <div class="swiper-slide"><img src="assets/img/banner.jpg" alt="배너2"></div>
+                    <div class="swiper-slide"><img src="assets/img/banner.jpg" alt="배너3"></div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
         </div>
     </section>
     <!-- //banner -->
@@ -75,5 +93,16 @@
 
     <!-- Javascripts -->
     <script src="assets/js/jquery.min_1.12.4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js"></script>
+    <script>
+        $(document).ready(function () {
+            //initialize swiper when document ready
+            var mySwiper = new Swiper ('.swiper-container', {
+                // Optional parameters
+                direction: 'horizontal',
+                loop: true
+            })
+        });
+    </script>
 </body>
 </html>
