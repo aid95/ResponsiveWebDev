@@ -91,6 +91,9 @@
     <section id="content_m">
         <div class="container">
             <div class="row">
+                <div class="content_title">
+                    <h5>오늘의 추천음악</h5>
+                </div>
                 <!-- //음악정보를 위한 틀 -->
                 <div class="play_list">
                     <ul class="m_box">
