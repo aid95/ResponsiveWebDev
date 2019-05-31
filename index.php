@@ -58,9 +58,6 @@
                 </div>
                 <!-- If we need pagination -->
                 <div class="swiper-pagination"></div>
-                <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
             </div>
         </div>
     </section>
@@ -90,8 +87,86 @@
         </div>
     </header>
     <!-- //header -->
+    
+    <section id="content_m">
+        <div class="container">
+            <div class="row">
+                <!-- //음악정보를 위한 틀 -->
+                <div class="play_list">
+                    <ul class="m_box">
+                        <!-- //한줄에 최대 5개 -->
+                        <li>
+                            <div class="m_thumb">
+                                <img src="./assets/img/bol4_1.jpg" alt="">
+                            </div>
+                            <div class="m_entry">
+                                <div class="m_info">
 
-    <!-- Javascripts -->
+                                </div>
+                                <div class="m_tags">
+
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="m_thumb">
+                                <img src="./assets/img/bol4_2.jpg" alt="">
+                            </div>
+                            <div class="m_entry">
+                                <div class="m_info">
+
+                                </div>
+                                <div class="m_tags">
+
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="m_thumb">
+                                <img src="./assets/img/bol4_3.jpg" alt="">
+                            </div>
+                            <div class="m_entry">
+                                <div class="m_info">
+
+                                </div>
+                                <div class="m_tags">
+
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="m_thumb">
+                                <img src="./assets/img/rv_1.jpg" alt="">
+                            </div>
+                            <div class="m_entry">
+                                <div class="m_info">
+
+                                </div>
+                                <div class="m_tags">
+
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="m_thumb">
+                                <img src="./assets/img/rv_2.jpg" alt="">
+                            </div>
+                            <div class="m_entry">
+                                <div class="m_info">
+
+                                </div>
+                                <div class="m_tags">
+
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //m_content -->
+
     <script src="assets/js/jquery.min_1.12.4.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js"></script>
     <script>
@@ -104,5 +179,6 @@
             })
         });
     </script>
+    <!-- //Javascripts -->
 </body>
 </html>
