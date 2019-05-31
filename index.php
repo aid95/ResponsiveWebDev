@@ -10,15 +10,19 @@
 
     <title>정직한 사이트 제목</title>
 
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <!-- 웹폰트 가져오기 -->
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900" rel="stylesheet">
     <!-- JQUERY CDN -->
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <!-- 메인화면 이미지 슬라이딩을 위한 swiper js 라이브러리 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- HTLM5shiv ie6~8 -->
     <!--[if lt IE 9]> 
@@ -29,146 +33,45 @@
     <![endif]-->
 </head>
 <body>
-    <section id="banner">
-        <div class="banner_menu">
-            <h2 class="ir_so">트렌드 음악 소식</h2>
-            <div class="container">
-                <div class="row">
-                    <div class="bm_right">
-                        <ul>
-                            <li class="line"><a href="#" target="_blank" rel="noopener noreferrer">공지사항</a></li>
-                            <li class="line"><a href="#" target="_blank" rel="noopener noreferrer">고객센터</a></li>
-                            <li class="line"><a href="#" target="_blank" rel="noopener noreferrer">회원가입</a></li>
-                            <li><a href="#" target="_blank" rel="noopener noreferrer">로그인</a></li>
-                            <li class="blue"><a href="#" target="_blank" rel="noopener noreferrer">사이트맵</a></li>
-                        </ul>
-                    </div>
-                </div>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light"> <a class="navbar-brand" href="#">Navbar</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button> <div class="collapse navbar-collapse" id="navbarTogglerDemo02"> <ul class="navbar-nav mr-auto mt-2 mt-lg-0"> <li class="nav-item active"> <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> </li> <li class="nav-item"> <a class="nav-link" href="#">Link</a> </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+                </ul>
             </div>
-        </div>
-        <div class="slider">
-            <!-- Slider main container -->
-            <div class="swiper-container">
-                <!-- Additional required wrapper -->
+        </nav>
+    </div>
+    <!-- //header -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12" style="width:100%; height:100%;">
+                <!— Slider main container —>
+                <div class="swiper-container swiper-container-initialized swiper-container-horizontal">
                 <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide"><img src="assets/img/banner.jpg" alt="배너1"></div>
                     <div class="swiper-slide"><img src="assets/img/banner.jpg" alt="배너2"></div>
-                    <div class="swiper-slide"><img src="assets/img/banner.jpg" alt="배너3"></div>
+                    <div class="swiper-slide"><img src="assets/img/banner.jpg" alt="배너2"></div>
+                    <div class="swiper-slide"><img src="assets/img/banner.jpg" alt="배너2"></div>
                 </div>
-                <!-- If we need pagination -->
+                <!-- Add Pagination -->
                 <div class="swiper-pagination"></div>
             </div>
         </div>
-    </section>
+    </div>
     <!-- //banner -->
 
-    <header id="header">
-        <div class="container">
-            <div class="row">
-                <div class="header clearfix">
-                    <h1>
-                        <a href="#">
-                            <em><img src="assets/img/logo.png" alt=""></em>
-                            <strong><img src="assets/img/logo-sub.png" alt=""></strong>
-                        </a>
-                    </h1>
-                    <nav class="nav">
-                        <ul class="clearfix">
-                            <li><a href="http://" target="_blank" rel="noopener noreferrer">소개</a></li>
-                            <li><a href="http://" target="_blank" rel="noopener noreferrer">음악</a></li>
-                            <li><a href="http://" target="_blank" rel="noopener noreferrer">콘서트</a></li>
-                            <li><a href="http://" target="_blank" rel="noopener noreferrer">게시판</a></li>
-                            <li><a href="http://" target="_blank" rel="noopener noreferrer">DJ 광장</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6 col-md-3"></div>
+            <div class="col-xs-6 col-md-3"></div>
+            <div class="col-xs-6 col-md-3"></div>
+            <div class="col-xs-6 col-md-3"></div>
         </div>
-    </header>
-    <!-- //header -->
-    
-    <section id="content_m">
-        <div class="container">
-            <div class="row">
-                <div class="content_title">
-                    <h5>오늘의 추천음악</h5>
-                </div>
-                <!-- //음악정보를 위한 틀 -->
-                <div class="play_list">
-                    <ul class="m_box">
-                        <!-- //한줄에 최대 5개 -->
-                        <li>
-                            <div class="m_thumb">
-                                <img src="./assets/img/bol4_1.jpg" alt="">
-                            </div>
-                            <div class="m_entry">
-                                <div class="m_info">
-
-                                </div>
-                                <div class="m_tags">
-
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="m_thumb">
-                                <img src="./assets/img/bol4_2.jpg" alt="">
-                            </div>
-                            <div class="m_entry">
-                                <div class="m_info">
-
-                                </div>
-                                <div class="m_tags">
-
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="m_thumb">
-                                <img src="./assets/img/bol4_3.jpg" alt="">
-                            </div>
-                            <div class="m_entry">
-                                <div class="m_info">
-
-                                </div>
-                                <div class="m_tags">
-
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="m_thumb">
-                                <img src="./assets/img/rv_1.jpg" alt="">
-                            </div>
-                            <div class="m_entry">
-                                <div class="m_info">
-
-                                </div>
-                                <div class="m_tags">
-
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="m_thumb">
-                                <img src="./assets/img/rv_2.jpg" alt="">
-                            </div>
-                            <div class="m_entry">
-                                <div class="m_info">
-
-                                </div>
-                                <div class="m_tags">
-
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+        <div class="row">
+            <div class="col-xs-12"></div>
         </div>
-    </section>
-    <!-- //m_content -->
+    </div>
 
     <script src="assets/js/jquery.min_1.12.4.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js"></script>
