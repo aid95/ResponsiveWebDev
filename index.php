@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -54,52 +55,130 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xs-12" style="width:100%; height:100%;">
-                <!— Slider main container —>
-                <div class="swiper-container swiper-container-initialized swiper-container-horizontal">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="assets/img/banner.jpg" alt="배너2"></div>
-                    <div class="swiper-slide"><img src="assets/img/banner.jpg" alt="배너2"></div>
-                    <div class="swiper-slide"><img src="assets/img/banner.jpg" alt="배너2"></div>
+                <div class="col-xs-12" style="width:100%; height:100%;">
+                    <!— Slider main container —>
+                    <div class="swiper-container swiper-container-initialized swiper-container-horizontal">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="assets/img/banner.jpg" alt="배너2"></div>
+                        <div class="swiper-slide"><img src="assets/img/banner.jpg" alt="배너2"></div>
+                        <div class="swiper-slide"><img src="assets/img/banner.jpg" alt="배너2"></div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
                 </div>
-                <!-- Add Pagination -->
-                <div class="swiper-pagination"></div>
             </div>
         </div>
     </div>
     <!-- //banner -->
 
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-6 col-md-3">
-                <div class="m-thumb">
-                    <img src="assets/img/bol4_1.jpg" alt="볼 빨간 사춘기1">
+    <div class="container-fluid" style="background-color: #f2f2f2; padding: 20px 0 20px 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12" style="width:100%; height:100%;">
+                    <div class="pb-2 mt-4 mb-2 ml-3 mr-3 border-bottom">
+                        <h1 class="conts-title">🎼 오늘의 추천음악!!</h1>
+                    </div>
                 </div>
-                <div class="m-entry"></div>
-            </div>
-            <div class="col-xs-6 col-md-3">
-                <div class="m-thumb">
-                    <img src="assets/img/bol4_1.jpg" alt="볼 빨간 사춘기1">
+                <div class="col-xs-3 col-sm-6 col-md-3">
+                    <div class="m-box">
+                        <div class="m-thumb">
+                            <img src="assets/img/bol4_1.jpg" alt="볼 빨간 사춘기1">
+                        </div>
+                        <div class="m-entry pt-20 pb-20">
+                            <div class="m-info">
+                                <h3><a href="#">볼 빨간 사춘기1123123123123123</a></h3>
+                            </div>
+                            <div class="m-tags-list">
+                                <div class="c-tag">
+                                    <span class="badge badge-info">달달함</span>
+                                    <span class="badge badge-info">산뜻함</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="m-entry"></div>
-            </div>
-            <div class="col-xs-6 col-md-3">
-                <div class="m-thumb">
-                    <img src="assets/img/bol4_1.jpg" alt="볼 빨간 사춘기1">
+                <div class="col-xs-3 col-sm-6 col-md-3">
+                    <div class="m-box">
+                        <div class="m-thumb">
+                            <img src="assets/img/bol4_2.jpg" alt="볼 빨간 사춘기1">
+                        </div>
+                        <div class="m-entry pt-20 pb-20">
+                            <div class="m-info">
+                                <h3><a href="#">볼 빨간 사춘기1123123123123123</a></h3>
+                            </div>
+                            <div class="m-tags-list">
+                                <div class="c-tag">
+                                    <span class="badge badge-info">달달함</span>
+                                    <span class="badge badge-info">산뜻함</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="m-entry"></div>
-            </div>
-            <div class="col-xs-6 col-md-3">
-                <div class="m-thumb">
-                    <img src="assets/img/bol4_1.jpg" alt="볼 빨간 사춘기1">
+                <div class="col-xs-3 col-sm-6 col-md-3">
+                    <div class="m-box">
+                        <div class="m-thumb">
+                            <img src="assets/img/bol4_3.jpg" alt="볼 빨간 사춘기1">
+                        </div>
+                        <div class="m-entry pt-20 pb-20">
+                            <div class="m-info">
+                                <h3><a href="#">볼 빨간 사춘기1123123123123123</a></h3>
+                            </div>
+                            <div class="m-tags-list">
+                                <div class="c-tag">
+                                    <span class="badge badge-info">달달함</span>
+                                    <span class="badge badge-info">산뜻함</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="m-entry"></div>
+                <div class="col-xs-3 col-sm-6 col-md-3">
+                    <div class="m-box">
+                        <div class="m-thumb">
+                            <img src="assets/img/rv_1.jpg" alt="볼 빨간 사춘기1">
+                        </div>
+                        <div class="m-entry pt-20 pb-20">
+                            <div class="m-info">
+                                <h3><a href="#">볼 빨간 사춘기1123123123123123</a></h3>
+                            </div>
+                            <div class="m-tags-list">
+                                <div class="c-tag">
+                                    <span class="badge badge-info">달달함</span>
+                                    <span class="badge badge-info">산뜻함</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12"></div>
         </div>
     </div>
+    <!-- //today recommend music -->
+    
+    <div class="container-fluid" style="padding: 20px 0 20px 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12" style="width:100%; height:100%;">
+                    <div class="pb-2 mt-4 mb-2 ml-3 mr-3 border-bottom text-right">
+                        <h1 class="conts-title">🎉 진행중인 이벤트</h1>
+                    </div>
+                </div>
+                <div class="col-md-7" style="background-color: #f1f1f1; height: 400px;">
+                    <p>1</p>
+                </div>
+                <div class="col-md-5">
+                    <div class="col-sm-12" style="background-color: #c1c1c1; height: 200px;">
+                        <p>2</p>
+                    </div>
+                    <div class="col-sm-12" style="background-color: #919191; height: 200px;">
+                        <p>3</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //today recommend music -->
 
     <script src="assets/js/jquery.min_1.12.4.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js"></script>
@@ -110,7 +189,7 @@
                 // Optional parameters
                 direction: 'horizontal',
                 loop: true
-            })
+            });
         });
     </script>
     <!-- //Javascripts -->
