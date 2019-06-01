@@ -6,4 +6,8 @@
 .m-box .m-entry .m-info {position: relative;}
 .m-box .m-entry .m-tags-list {position: absolute; bottom: 20px;}
 
-.conts-title {letter-spacing: -1px; font-size: 20px;}
+.conts-title {letter-spacing: -1px; font-size: 25px;}
+
+.comp-nav {text-align: center;}
+.comp-nav li {padding: 0 10px; display: inline;}
+.comp-nav li.nav-line {border-right: 1px solid #f0f0f0;}

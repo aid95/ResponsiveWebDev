@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -164,8 +163,10 @@
                         <h1 class="conts-title">🎉 진행중인 이벤트</h1>
                     </div>
                 </div>
-                <div class="col-md-7" style="background-color: #f1f1f1; height: 400px;">
-                    <p>1</p>
+                <div class="col-md-7">
+                    <div class="col-sm-12" style="background-color: #f1f1f1; height: 400px;">
+                        <p>1</p>
+                    </div>
                 </div>
                 <div class="col-md-5">
                     <div class="col-sm-12" style="background-color: #c1c1c1; height: 200px;">
@@ -178,7 +179,54 @@
             </div>
         </div>
     </div>
-    <!-- //today recommend music -->
+    <!-- //event list -->
+
+    <div class="container-fluid" style="padding: 20px 0 20px 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12" style="width:100%; height:100%;">
+                    <div class="pb-2 mt-4 mb-2 ml-3 mr-3 border-bottom">
+                        <h1 class="conts-title">🌈 파트너 사이트</h1>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="col-sm-12" style="background-color: #f1f1f1; height: 400px;">
+                        <p>1</p>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="col-sm-12" style="background-color: #c1c1c1; height: 200px;">
+                        <p>2</p>
+                    </div>
+                    <div class="col-sm-12" style="background-color: #919191; height: 200px;">
+                        <p>3</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //Partner links -->
+
+    <div class="container-fluid" style="padding: 20px 0 20px 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12" style="width:100%; height:100%;">
+                    <ul class="comp-nav">
+                        <li class="nav-line">회사소개</li>
+                        <li class="nav-line">채용정보</li>
+                        <li class="nav-line">제휴/광고 문의</li>
+                        <li class="nav-line">이용약관</li>
+                        <li class="nav-line">개인정보 처리방침</li>
+                        <li>고객센터</li>
+                    </ul>
+                </div>
+                <div class="col-xs-12">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //about me -->
 
     <script src="assets/js/jquery.min_1.12.4.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js"></script>
