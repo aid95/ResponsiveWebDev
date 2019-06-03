@@ -181,6 +181,13 @@
     </div>
     <!-- //event list -->
 
+    <section class="scene one">
+        <header>
+            <h1>Lorem ipsum dolor sit amet.</h1> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam suscipit sint ab beatae nihi
+        </header>
+    </section>
+    <!-- //parallax scroll background -->
+
     <div class="container-fluid" style="padding: 20px 0 20px 0;">
         <div class="container">
             <div class="row">
