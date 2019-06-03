@@ -58,9 +58,10 @@
                     <!— Slider main container —>
                     <div class="swiper-container swiper-container-initialized swiper-container-horizontal">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="assets/img/banner.jpg" alt="배너2"></div>
-                        <div class="swiper-slide"><img src="assets/img/banner.jpg" alt="배너2"></div>
-                        <div class="swiper-slide"><img src="assets/img/banner.jpg" alt="배너2"></div>
+                        <div class="swiper-slide"><img src="assets/img/cover_1.jpg" alt="배너2"></div>
+                        <div class="swiper-slide"><img src="assets/img/cover_2.jpg" alt="배너2"></div>
+                        <div class="swiper-slide"><img src="assets/img/cover_3.jpg" alt="배너2"></div>
+                        <div class="swiper-slide"><img src="assets/img/cover_4.jpg" alt="배너2"></div>
                     </div>
                     <!-- Add Pagination -->
                     <div class="swiper-pagination"></div>
