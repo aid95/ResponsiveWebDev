@@ -17,6 +17,15 @@
 
 .login_wrap {margin: 0 auto; max-width: 500px;}
 
+.post-wrap {}
+.post-wrap h1 {margin: 20px 0 20px 0; font-family: 'yg-jalnan'; font-size: 35px;}
+.post-wrap h1 > span {padding-right: 7px; color: #0F5298;}
+.post-wrap h2 {margin: 20px 0 20px 0; font-family: 'yg-jalnan'; font-size: 30px;}
+.post-wrap h2 > span {padding-right: 7px; color: #2565AE;}
+.post-wrap h3 {margin: 20px 0 20px 0; font-family: 'yg-jalnan'; font-size: 25px;}
+.post-wrap h3 > span {padding-right: 7px; color: #3c99dc;}
+.post-wrap .text {font-family: 'Gothic A1'; font-size: 16px; line-height: 25px; margin: 9px 0 9px 0;}
+
 .scene {
   height: 35vh;
   overflow: hidden;

@@ -80,8 +80,8 @@
                     <div class="col-sm-12 text-center">
                         <p style="font-family: 'yg-jalnan'; font-size: 50px; color: #3c99dc;">웨이브</p>
                     </div>
-                    <form method="POST">
-                        <div class="col-sm-12">
+                    <div class="col-sm-12">
+                        <form method="POST">
                             <div class="mb-4">
                                 <div class="col-sm-12" style="padding: 4px; border-bottom: 1px solid #3c99dc;">
                                     <input class="form-control mr-sm-2" name="uid" style="border: 0px solid #fff;" type="text" placeholder="아이디" aria-label="아이디">
@@ -93,12 +93,12 @@
                             <div class="col-sm-12">
                                 <button class="btn btn-primary my-2 my-sm-0" type="submit" style="width: 100%;">로그인</button>
                             </div>
-                            <div class="col-sm-12 mt-2">
-                                <button class="btn btn-success my-2 my-sm-0" type="submit" style="width: 100%;">회원가입</button>
-                            </div>
-                            <hr>
+                        </form>
+                        <div class="col-sm-12 mt-2">
+                            <button class="btn btn-success my-2 my-sm-0" style="width: 100%;" onclick="location.href='signup.php'">회원가입</button>
                         </div>
-                    </form>
+                        <hr>
+                    </div>
                 </div>
             </div>
         </div>
