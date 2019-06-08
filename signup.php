@@ -86,7 +86,7 @@
                 return;
             }
             else {
-                 obj_form.submit();
+                obj_form.submit();
             }
         }
     </script>
