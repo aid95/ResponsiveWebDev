@@ -29,6 +29,8 @@
         else {
             $login_fail = true;
         }
+
+        mysqli_close($link);
     }
 ?>
 

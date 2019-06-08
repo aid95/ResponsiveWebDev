@@ -1,7 +1,7 @@
 <?php
-    session_start();
 
-    $link = mysqli_connect("localhost", "kmuweb99", "ghavpdlwl1", "kmuweb99");
+    session_start();
+    
 ?>
 
 <!DOCTYPE html>
@@ -57,10 +57,10 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">카테고리</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">아티스트 랭킹</a>
-                            <a class="dropdown-item" href="#">매거진</a>
+                            <a class="dropdown-item disabled" href="#">아티스트 랭킹</a>
+                            <a class="dropdown-item" href="magazine.php">매거진</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">빈 공간</a>
+                            <a class="dropdown-item disabled" href="#">빈 공간</a>
                         </div>
                     </li>
                     <li class="nav-item">
