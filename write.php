@@ -1,20 +1,3 @@
-<?php
-
-    session_start();
-
-    $link = mysqli_connect("localhost", "kmuweb99", "ghavpdlwl1", "kmuweb99");
-    mysqli_query($link, "SET NAMES utf8");
-
-    $get_article_sql = "SELECT * FROM `wave_article`";
-    $search_sql = "SELECT * FROM `wave_article` WHERE `article_title` LIKE '%".$_GET["search"]."%'";
-
-    if (!isset($_GET["search"]))
-        $result = mysqli_query($link, $get_article_sql);
-    else 
-        $result = mysqli_query($link, $search_sql);
-
-?>
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -74,11 +57,7 @@
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item disabled" href="#">빈 공간</a>
                         </div>
-                    </li>
-<?php
-if (isset($_SESSION["user_authority"]) && $_SESSION["user_authority"] > 6)
-echo "                        <li><a class=\"nav-link\" href=\"write.php\">글쓰기</a></li>";
-?>
+                        </li>
                     <li class="nav-item">
 <?php
 if (!isset($_SESSION["user_nick"]))
@@ -88,9 +67,9 @@ echo "                        <p class=\"nav-link\" href=\"login.php\">".$_SESSI
 ?>
                     </li>
                 </ul>
-                <form method="GET" class="form-inline my-2 my-lg-0">
+                <form class="form-inline my-2 my-lg-0">
                     <div class="search-box">
-                        <input class="form-control mr-sm-2" style="border: 0px solid #fff;" type="search" placeholder="Search" aria-label="Search" name="search">
+                        <input class="form-control mr-sm-2" style="border: 0px solid #fff;" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
                     </div>
                 </form>
@@ -100,41 +79,14 @@ echo "                        <p class=\"nav-link\" href=\"login.php\">".$_SESSI
     <div class="container-fluid" style="padding: 20px 0 20px 0; height: 1200px;">
         <div class="container">
             <div class="row">
-                <div class="col-md-8" style="width:100%; height:100%;">
-                    <div class="pb-2 mt-4 mb-2 ml-3 mr-3 border-bottom">
-                        <h1 class="side-title">웨이브 매거진</h1>
-                    </div>
-                    <div class="row ml-1 mr-1">
-<?php
-while($row = mysqli_fetch_assoc($result))
-{
-echo "                    <div class=\"col-xs-3 col-sm-6 col-md-3\">
-                        <div class=\"m-box\">
-                            <div class=\"m-thumb\">
-                                <img src=\"assets/thumbnail/".$row["article_thumbnail"]."\">
-                            </div>
-                            <div class=\"m-entry pt-20 pb-20\">
-                                <div class=\"m-info\">
-                                    <h3><a href=\"./view.php?id=".$row["id"]."\">".$row["article_title"]."</a></h3>
-                                </div>
-                                <div class=\"m-tags-list\">
-                                    <div class=\"c-tag\">
-                                        <span class=\"badge badge-info\">달달함</span>
-                                        <span class=\"badge badge-info\">산뜻함</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>";
-}
-mysqli_close($link);
-?>
-                    </div>
-                </div>
-                <div class="col-md-4" style="width:100%; height:100%;">
-                    <div class="pb-2 mt-4 mb-2 ml-3 mr-3 border-bottom">
-                        <h1 class="side-title">다른 음악정보</h1>
-                    </div>
+                <div class="col-md-12" style="width:100%; height:100%;">
+                    <form method="POST" action="write_proc.php" enctype="multipart/form-data">
+                        <div class="col-md-12 mt-4 mb-2"><input style="width: 100%; padding: 10px;" type="text" name="article_title"></div>
+                        <div class="col-md-12 mt-2 mb-2"><textarea name="article_body" rows="30" style="width: 100%; padding: 10px;"></textarea></div>
+                        <div class="col-md-12 mt-2 mb-2"><label for="article_thumbnail">썸네일 이미지</label><input style="width: 100%;" type="file" id="article_thumbnail" name="article_thumbnail"></div>
+                        <div class="col-md-12 mt-2 mb-2"><label for="article_mp3">미리듣기 mp3파일</label><input style="width: 100%;" type="file" id="article_mp3" name="article_mp3"></div>
+                        <button class="btn btn-outline-primary my-2 my-sm-0" style="float: right;" type="submit">쓰기</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -157,43 +109,5 @@ mysqli_close($link);
         </div>
         <!-- //about me -->
     </div>
-    <script>
-        <!-- //ref https://stackoverflow.com/questions/487073/how-to-check-if-element-is-visible-after-scrolling -->
-        function Utils() { }
-
-        Utils.prototype = {
-            constructor: Utils,
-            isElementInView: function (element, fullyInView) {
-                var pageTop = $(window).scrollTop();
-                var pageBottom = pageTop + $(window).height();
-                var elementTop = $(element).offset().top;
-                var elementBottom = elementTop + $(element).height();
-                if (fullyInView === true) {
-                    return ((pageTop < elementTop) && (pageBottom > elementBottom));
-                } else {
-                    return ((elementTop <= pageBottom) && (elementBottom >= pageTop));
-                }
-            }
-        };
-
-        var Utils = new Utils();
-        var isPlay = false;
-        $(document).ready(function() {
-            $(window).scroll(function() {
-                var isElementInView = Utils.isElementInView($('#playobjwrap'), false);
-                if (isElementInView) {
-                    if (!isPlay) {
-                        isPlay = true;
-                        document.getElementById("playmusicobj").play();
-                    }
-                } else {
-                    if (isPlay) {
-                        document.getElementById("playmusicobj").pause();
-                        isPlay = false;
-                    }
-                }
-            });
-        });
-    </script>
 </body>
 </html>

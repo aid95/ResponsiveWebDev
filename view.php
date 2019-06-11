@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -19,7 +21,7 @@
     <!-- 웹폰트 가져오기 -->
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Gothic+A1:400,500,600,700,800&display=swap&subset=korean" rel="stylesheet">
- 
+
     <!-- 메인화면 이미지 슬라이딩을 위한 swiper js 라이브러리 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -33,6 +35,16 @@
             alert("현재 브라우저는 지원하지 않습니다. 크롬 브라우저를 추천합니다.");
         </script>
     <![endif]-->
+
+    <script>
+        function delete_post(id)
+        {
+            if(confirm("삭제하시겠습니까?"))
+            {
+                window.location.href = "./del_proc.php?mid=" + id
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -41,7 +53,6 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
@@ -59,6 +70,10 @@
                             <a class="dropdown-item disabled" href="#">빈 공간</a>
                         </div>
                         </li>
+<?php
+if (isset($_SESSION["user_authority"]) && $_SESSION["user_authority"] > 6)
+echo "                        <li><a class=\"nav-link\" href=\"write.php\">글쓰기</a></li>";
+?>
                     <li class="nav-item">
 <?php
 if (!isset($_SESSION["user_nick"]))
@@ -89,9 +104,12 @@ echo "                        <p class=\"nav-link\" href=\"login.php\">".$_SESSI
                         $link = mysqli_connect("localhost", "kmuweb99", "ghavpdlwl1", "kmuweb99"); mysqli_query($link, "SET NAMES utf8");
                         $result = mysqli_query($link, "SELECT * FROM `wave_article` WHERE `id` = '".$_GET["id"]."'") or die(mysqli_error($link));
                         $row = mysqli_fetch_assoc($result);
-
                         echo $row["article_body"]."\n";
                         ?>
+                    </div>
+                    <div>
+                        <button style="float: right;" class="btn btn-outline-info my-2 my-sm-0" onclick="javascript:location.href='update.php?id=<?php echo $row["id"]; ?>'">수정</button>
+                        <button style="float: left;" class="btn btn-outline-danger my-2 my-sm-0" onclick="javascript:delete_post(<?php echo $row["id"]; ?>)">삭제</button>
                     </div>
                 </div>
                 <div class="col-md-4" style="width:100%; height:100%;">
@@ -122,9 +140,7 @@ echo "                        <p class=\"nav-link\" href=\"login.php\">".$_SESSI
     </div>
     <script>
         <!-- //ref https://stackoverflow.com/questions/487073/how-to-check-if-element-is-visible-after-scrolling -->
-        function Utils() {
-
-        }
+        function Utils() {;}
 
         Utils.prototype = {
             constructor: Utils,
@@ -133,7 +149,6 @@ echo "                        <p class=\"nav-link\" href=\"login.php\">".$_SESSI
                 var pageBottom = pageTop + $(window).height();
                 var elementTop = $(element).offset().top;
                 var elementBottom = elementTop + $(element).height();
-
                 if (fullyInView === true) {
                     return ((pageTop < elementTop) && (pageBottom > elementBottom));
                 } else {

@@ -94,7 +94,7 @@ echo "                        <p class=\"nav-link\" href=\"login.php\">".$_SESSI
             </div>
         </div>
     </div>
-    <!-- //banner -->
+    <!-- //Banner -->
 
     <div class="container-fluid" style="background-color: #f2f2f2; padding: 20px 0 20px 0;">
         <div class="container">
@@ -179,7 +179,7 @@ echo "                        <p class=\"nav-link\" href=\"login.php\">".$_SESSI
             </div>
         </div>
     </div>
-    <!-- //today recommend music -->
+    <!-- //Today recommend music -->
     
     <div class="container-fluid" style="padding: 20px 0 20px 0;">
         <div class="container">
@@ -259,7 +259,7 @@ echo "                        <p class=\"nav-link\" href=\"login.php\">".$_SESSI
             </div>
         </div>
     </div>
-    <!-- //about me -->
+    <!-- //About me -->
 
     <script src="assets/js/jquery.min_1.12.4.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js"></script>

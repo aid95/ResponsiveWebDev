@@ -23,6 +23,7 @@
             $row = mysqli_fetch_assoc($result);
             $_SESSION["user_id"] = $user_id;
             $_SESSION["user_nick"] = $row["user_nick"];
+            $_SESSION["user_authority"] = $row["user_authority"];
 
             echo "<meta http-equiv='refresh' content='0;url=index.php'>";
         }
