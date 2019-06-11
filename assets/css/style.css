@@ -26,6 +26,11 @@
 .post-wrap h3 > span {padding-right: 7px; color: #3c99dc;}
 .post-wrap .text {font-family: 'Gothic A1'; font-size: 16px; line-height: 25px; margin: 9px 0 9px 0;}
 
+.album-thumb {display: inline; min-width: 64px; float: left; margin-right: 25px;}
+.album-txt-wrap {display: inline; float: left;}
+.album-title {font-family: '맑은 고딕', 'Courier New', Courier, monospace; font-size: 18px;}
+.album-singer {font-family: '맑은 고딕', Courier, monospace; font-size: 10px; color: gray;}
+
 .scene {
   height: 35vh;
   overflow: hidden;
