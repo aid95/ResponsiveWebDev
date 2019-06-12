@@ -52,7 +52,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">카테고리</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item disabled" href="#">아티스트 랭킹</a>
+                            <a class="dropdown-item " href="album.php">최신 음악</a>
                             <a class="dropdown-item" href="magazine.php">매거진 <span class="sr-only">(current)</span></a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item disabled" href="#">빈 공간</a>
@@ -63,7 +63,7 @@
 if (!isset($_SESSION["user_nick"]))
 echo "                        <a class=\"nav-link\" href=\"login.php\">로그인</a>";
 else
-echo "                        <p class=\"nav-link\" href=\"login.php\">".$_SESSION["user_nick"]."님 안녕하세요! <a href=\"logout.php\">로그아웃</a></p>";
+echo "                        <p class=\"nav-link\" href=\"#\">".$_SESSION["user_nick"]."님 안녕하세요! <a href=\"logout.php\">로그아웃</a></p>";
 ?>
                     </li>
                 </ul>

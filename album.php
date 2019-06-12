@@ -1,16 +1,18 @@
-<?php 
+<?php
 
-    session_start(); 
+    session_start();
 
-    $link = mysqli_connect("localhost", "kmuweb99", "ghavpdlwl1", "kmuweb99"); mysqli_query($link, "SET NAMES utf8");
+    $link = mysqli_connect("localhost", "kmuweb99", "ghavpdlwl1", "kmuweb99");
+    mysqli_query($link, "SET NAMES utf8");
 
-    $get_article_sql = "SELECT * FROM `wave_article`";
-    $search_sql = "SELECT * FROM `wave_article` WHERE `article_title` LIKE '%".$_GET["search"]."%'";
-
+    $get_album_sql = "SELECT * FROM `wave_album`";
+    $search_sql = "SELECT * FROM `wave_album` WHERE `album_name` LIKE '%".$_GET["search"]."%'";
     if (!isset($_GET["search"]))
-        $result = mysqli_query($link, $get_article_sql);
+        $result = mysqli_query($link, $get_album_sql);
     else 
-        $result = mysqli_query($link, $search_sql)
+        $result = mysqli_query($link, $search_sql);
+
+    mysqli_close($link);
 
 ?>
 
@@ -28,7 +30,7 @@
 
     <!-- JQUERY CDN -->
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
@@ -42,6 +44,13 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <script>
+        function view_album(id) {
+            var popOption = "width=400, height=360, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
+            window.open("view_album.php?id=" + id,"",popOption);
+        }
+    </script>
+
     <!-- HTLM5shiv ie6~8 -->
     <!--[if lt IE 9]> 
         <script src="assets/js/html5shiv.min.js"></script>
@@ -49,16 +58,6 @@
             alert("현재 브라우저는 지원하지 않습니다. 크롬 브라우저를 추천합니다.");
         </script>
     <![endif]-->
-
-    <script>
-        function delete_post(id)
-        {
-            if(confirm("삭제하시겠습니까?"))
-            {
-                window.location.href = "./del_proc.php?mid=" + id
-            }
-        }
-    </script>
 </head>
 <body>
     <div class="container">
@@ -83,10 +82,11 @@
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item disabled" href="#">빈 공간</a>
                         </div>
-                        </li>
+                    </li>
 <?php
 if (isset($_SESSION["user_authority"]) && $_SESSION["user_authority"] > 6)
-echo "                        <li><a class=\"nav-link\" href=\"write.php\">글쓰기</a></li>";
+echo "                        <li><a class=\"nav-link\" href=\"add_album.php\">앨범추가</a></li>";
+echo "                        <li><a class=\"nav-link\" href=\"add_music.php\">음악추가</a></li>";
 ?>
                     <li class="nav-item">
 <?php
@@ -97,9 +97,9 @@ echo "                        <p class=\"nav-link\" href=\"#\">".$_SESSION["user
 ?>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
+                <form method="GET" class="form-inline my-2 my-lg-0">
                     <div class="search-box">
-                        <input class="form-control mr-sm-2" style="border: 0px solid #fff;" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control mr-sm-2" style="border: 0px solid #fff;" type="search" placeholder="Search" aria-label="Search" name="search">
                         <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
                     </div>
                 </form>
@@ -109,35 +109,41 @@ echo "                        <p class=\"nav-link\" href=\"#\">".$_SESSION["user
     <div class="container-fluid" style="padding: 20px 0 20px 0; height: 1200px;">
         <div class="container">
             <div class="row">
-                <div class="col-md-8" style="width:100%; height:100%;">
+                <div class="col-xs-12" style="width:100%; height:100%;">
                     <div class="pb-2 mt-4 mb-2 ml-3 mr-3 border-bottom">
-                        <h1 class="side-title">웨이브 매거진</h1>
+                        <h1 class="conts-title">🎼 2019 최신음악</h1>
                     </div>
-                    <div class="pb-2 mt-4 mb-2 ml-3 mr-3 post-wrap">
-                        <?php
-                        $result = mysqli_query($link, "SELECT * FROM `wave_article` WHERE `id` = '".$_GET["id"]."'") or die(mysqli_error($link));
-                        $row = mysqli_fetch_assoc($result);
-                        echo $row["article_body"]."\n";
-                        ?>
-                        <div class="text-center">
-                            <button type="button" class="btn btn-primary" id="like_btn">좋아요(<?php echo $row["article_like"]; ?>)</button>
-                        </div>
-                    </div>
+                </div>
+                <table class="table pb-2 mt-2 mb-2 ml-3 mr-3">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">앨범</th>
+                            <th scope="col">장르</th>
+                            <th scope="col">발매일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 <?php
-if (isset($_SESSION["user_authority"]) && $_SESSION["user_authority"] > 6)
-{
-echo "                    <div>";
-echo "                        <button style=\"float: right;\" class=\"btn btn-outline-info my-2 my-sm-0\" onclick=\"javascript:location.href='update.php?id=".$row["id"]."'\">수정</button>";
-echo "                        <button style=\"float: left;\" class=\"btn btn-outline-danger my-2 my-sm-0\" onclick=\"javascript:delete_post(".$row["id"].")\">삭제</button>";
-echo "                    </div>";
+while($row = mysqli_fetch_assoc($result)) {
+echo"                        <tr>
+                            <th scope=\"row\"></th>
+                            <td>
+                                <div class=\"album-info\">
+                                    <div class=\"album-thumb\"><img style=\"max-width: 64px;\" src=\"./assets/thumbnail/".$row["album_thumbnail"]."\" alt=\"\"></div>
+                                    <div class=\"album-txt-wrap\">
+                                        <div class=\"album-title\" onclick='javascript:view_album(".$row["id"].")'>".$row["album_name"]."</div>
+                                        <div class=\"album-singer\">".$row["album_artist"]."</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>".$row["album_genre"]."</td>
+                            <td>".$row["album_date"]."</td>
+                        </tr>";
 }
 ?>
-                </div>
-                <div class="col-md-4" style="width:100%; height:100%;">
-                    <div class="pb-2 mt-4 mb-2 ml-3 mr-3 border-bottom">
-                        <h1 class="side-title">다른 음악정보</h1>
-                    </div>
-                </div>
+                    </tbody>
+                </table>
             </div>
         </div>
         <div class="container mt-4 mb-4">
@@ -159,57 +165,5 @@ echo "                    </div>";
         </div>
         <!-- //about me -->
     </div>
-    <script>
-        <!-- //ref https://stackoverflow.com/questions/487073/how-to-check-if-element-is-visible-after-scrolling -->
-        function Utils() {;}
-
-        Utils.prototype = {
-            constructor: Utils,
-            isElementInView: function (element, fullyInView) {
-                var pageTop = $(window).scrollTop();
-                var pageBottom = pageTop + $(window).height();
-                var elementTop = $(element).offset().top;
-                var elementBottom = elementTop + $(element).height();
-                if (fullyInView === true) {
-                    return ((pageTop < elementTop) && (pageBottom > elementBottom));
-                } else {
-                    return ((elementTop <= pageBottom) && (elementBottom >= pageTop));
-                }
-            }
-        };
-
-        var Utils = new Utils();
-        var isPlay = false;
-        $( document ).ready(function() {
-            $( window ).scroll(function() {
-                var isElementInView = Utils.isElementInView($('#playobjwrap'), false);
-                if (isElementInView) {
-                    if (!isPlay) {
-                        isPlay = true;
-                        document.getElementById("playmusicobj").play();
-                    }
-                } else {
-                    if (isPlay) {
-                        document.getElementById("playmusicobj").pause();
-                        isPlay = false;
-                    }
-                }
-            });
-
-            $('#like_btn').click( function() {
-                $.ajax({
-                    type : "GET",
-                    url : "like_proc.php?id=<?php echo $row["id"]; ?>",
-                    dataType : "text",
-
-                    error : function(){
-                    },
-                    success : function(data){
-                        $('#like_btn').html("좋아요("+data+")");
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>

@@ -69,7 +69,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">카테고리</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item disabled" href="#">아티스트 랭킹</a>
+                            <a class="dropdown-item " href="album.php">최신 음악</a>
                             <a class="dropdown-item" href="magazine.php">매거진 <span class="sr-only">(current)</span></a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item disabled" href="#">빈 공간</a>
@@ -84,7 +84,7 @@ echo "                        <li><a class=\"nav-link\" href=\"write.php\">글�
 if (!isset($_SESSION["user_nick"]))
 echo "                        <a class=\"nav-link\" href=\"login.php\">로그인</a>";
 else
-echo "                        <p class=\"nav-link\" href=\"login.php\">".$_SESSION["user_nick"]."님 안녕하세요! <a href=\"logout.php\">로그아웃</a></p>";
+echo "                        <p class=\"nav-link\" href=\"#\">".$_SESSION["user_nick"]."님 안녕하세요! <a href=\"logout.php\">로그아웃</a></p>";
 ?>
                     </li>
                 </ul>
@@ -157,43 +157,5 @@ mysqli_close($link);
         </div>
         <!-- //about me -->
     </div>
-    <script>
-        <!-- //ref https://stackoverflow.com/questions/487073/how-to-check-if-element-is-visible-after-scrolling -->
-        function Utils() { }
-
-        Utils.prototype = {
-            constructor: Utils,
-            isElementInView: function (element, fullyInView) {
-                var pageTop = $(window).scrollTop();
-                var pageBottom = pageTop + $(window).height();
-                var elementTop = $(element).offset().top;
-                var elementBottom = elementTop + $(element).height();
-                if (fullyInView === true) {
-                    return ((pageTop < elementTop) && (pageBottom > elementBottom));
-                } else {
-                    return ((elementTop <= pageBottom) && (elementBottom >= pageTop));
-                }
-            }
-        };
-
-        var Utils = new Utils();
-        var isPlay = false;
-        $(document).ready(function() {
-            $(window).scroll(function() {
-                var isElementInView = Utils.isElementInView($('#playobjwrap'), false);
-                if (isElementInView) {
-                    if (!isPlay) {
-                        isPlay = true;
-                        document.getElementById("playmusicobj").play();
-                    }
-                } else {
-                    if (isPlay) {
-                        document.getElementById("playmusicobj").pause();
-                        isPlay = false;
-                    }
-                }
-            });
-        });
-    </script>
 </body>
 </html>
