@@ -85,7 +85,8 @@
                     </li>
 <?php
 if (isset($_SESSION["user_authority"]) && $_SESSION["user_authority"] > 6)
-echo "                        <li><a class=\"nav-link\" href=\"write.php\">글쓰기</a></li>";
+echo "                        <li><a class=\"nav-link\" href=\"add_album.php\">앨범추가</a></li>";
+echo "                        <li><a class=\"nav-link\" href=\"add_music.php\">음악추가</a></li>";
 ?>
                     <li class="nav-item">
 <?php
