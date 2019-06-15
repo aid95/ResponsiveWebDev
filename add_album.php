@@ -1,29 +1,5 @@
 <?php
 	session_start();
-
-    $user_id = $_POST["uid"];
-    $user_password = $_POST["upw"];
-    $user_nick = $_POST["unick"];
-
-    if (isset($_SESSION["user_id"]) && isset($_SESSION["user_nick"]))
-    {
-        echo "<meta http-equiv='refresh' content='0;url=index.php'>";
-    }
-    else if (isset($user_id) && isset($user_password))
-    {
-        $link = mysqli_connect("localhost", "kmuweb99", "ghavpdlwl1", "kmuweb99");
-        mysqli_query($link, "SET NAMES utf8");
-
-        $exist_check_sql = "SELECT * FROM `wave_account` WHERE `user_id` = '".$user_id."'";
-        $result = mysqli_query($link, $exist_check_sql);
-        if (mysqli_num_rows($result) == 0)
-        {
-            $signup_sql = "INSERT INTO `wave_account` (`id`, `user_id`, `user_password`, `user_nick`, `user_authority`) VALUES (NULL, '".$user_id."', '".$user_password."', '".$user_nick."', '0');";
-            $result = mysqli_query($link, $signup_sql);
-
-            echo "<meta http-equiv='refresh' content='0;url=login.php'>";
-        }
-    }
 ?>
 
 <!DOCTYPE html>
